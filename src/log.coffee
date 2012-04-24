@@ -10,11 +10,10 @@ class Log
   # * _example_: {variable: this, showHidden: true, depth: 10}
   onEvent: (x, debug = false) ->
 		
-    console.log ("   #{ x }") unless quiet
-    
     if debug
       console.log ("   " + x) + util.inspect(debug.variable, debug.showHidden, debug.depth)
-    
+    else
+      console.log ("   #{ x }") unless quiet
 
 	# ## onStep ##
 	# Logs steps in blue
@@ -26,11 +25,10 @@ class Log
   # * _example_: {variable: this, showHidden: true, depth: 10}
   onStep: (x, debug = false) ->
 		
-    console.log "#{x}".blue unless quiet
     if debug
       console.log ("" + x + ": ").blue + util.inspect(debug.variable, debug.showHidden, debug.depth)
     else
-      console.log ("" + x).blue
+      console.log "#{x}".blue unless quiet
 
 	# ## onComplete ##
 	# Logs successful process completions in green
