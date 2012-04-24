@@ -13,6 +13,9 @@ colors = require "colors"
 # Filesystem API
 fs = require "fs"
 
+#Util API
+util = require "util"
+
 # Recursive mkdir for Node (think _mkdir -p_) -- 
 # See ://github.com/substack/node-mkdirp for more info
 mkdir = require( "mkdirp" ).mkdirp
